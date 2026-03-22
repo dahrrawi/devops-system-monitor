@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+  redis:
+    image: "redis:alpine"
+  grafana:
+    image: "grafana/grafana-oss"
+    ports:
+      - "3000:3000"
